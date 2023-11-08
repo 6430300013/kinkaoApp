@@ -1,3 +1,4 @@
+
 {
   "expo": {
     "name": "kinkaoApp",
@@ -26,5 +27,6 @@
     "web": {
       "favicon": "./assets/favicon.png"
     }
+    
   }
 }
