@@ -11,6 +11,7 @@ export default function LoginScreen() {
     const [password, setPassword] = useState('')
     const navigation = useNavigation();
     return (
+
         <SafeAreaView className="flex-1 ">
             <View className="item-center justify-center absolute px-4 pb-4 w-full h-full space-x-2 space-y-2 bg-white">
                 <View className="flex-2 bg-white justify-center items-center">

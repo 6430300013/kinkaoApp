@@ -5,15 +5,67 @@ import * as Icon from "react-native-feather";
 import { featured } from '../constants';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { auth } from '../firebase';
+import { signUpEmailPass } from '../firebase/AuthModel'; 
 //
 
 export default function RegisterScreen() {
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
-    const [name, setName] = useState('')
-    const [image, setImage] = useState('')
+    // const [email, setEmail] = useState('')
+    // const [password, setPassword] = useState('')
+    // const [name, setName] = useState('')
+    // const [image, setImage] = useState('')
     const navigation = useNavigation();
 
+    const [profile,setProfile] = useState({'email':'','username':'','password':'','photoURL':''})
+
+    const setEmail = (text) => {
+        setProfile(oldValue => ({
+          ...oldValue,
+          email:text
+        }))
+      }
+    
+      const setUsername = (text) => {
+        setProfile(oldValue => ({
+          ...oldValue,
+          username:text
+        }))
+      }
+    
+      const setPassword = (text) => {
+        setProfile(oldValue => ({
+          ...oldValue,
+          password:text
+        }))
+      }
+    
+      const setPhotoURL = (text) => {
+        setProfile(oldValue => ({
+          ...oldValue,
+          photoURL:text
+        }))
+      }
+
+      const unsuccess = (msg) => {
+        console.log(msg)
+        Alert.alert(msg)
+      }
+    
+      const allSuccess = (doc) => {
+        Alert.alert(`${doc.email} has been added to system`)
+        navigation.goBack()
+      }
+    
+      const onRegisterPress = () => {
+        console.log(`profile ${profile.email}`)
+        //dispatch(addProfile(profile))
+        //allSuccess(profile)
+        signUpEmailPass(profile,allSuccess,unsuccess)
+      }
+    
+      const onCancelPress = () => {
+        navigation.goBack()
+      }
+    
     // const regisrter = () => {
     //     auth.createUserWithEmailAndPassword(email, password)
     //     .then((userCredential) => {
@@ -64,23 +116,23 @@ export default function RegisterScreen() {
                 </View>
                 <View className="flex-row flex-2 item-center p-1 rounded-md bg-yellow-200">
                     <Icon.User height="30" width="22" stroke="darkorange" className="pl-1.5" />
-                    <TextInput placeholder='Enter name' className="flex-1 ml-2 " />
+                    <TextInput placeholder='Enter name' className="flex-1 ml-2 " value={profile.username} onChangeText={(text) => setUsername(text)}/>
                 </View>
                 <View className="flex-row flex-2 item-center p-1 rounded-md bg-yellow-200">
                     <Icon.Mail height="30" width="22" stroke="darkorange" className="pl-1.5" />
-                    <TextInput placeholder='Enter email' className="flex-1 ml-2 " />
+                    <TextInput placeholder='Enter email' className="flex-1 ml-2 " value={profile.email} onChangeText={(text) => setEmail(text)}/>
                 </View>
                 <View className="flex-row flex-2 item-center p-1 rounded-md bg-yellow-200">
                     <Icon.Key height="30" width="22" stroke="darkorange" className="pl-1.5" />
-                    <TextInput placeholder='Enter password' className="flex-1 ml-2 " />
+                    <TextInput placeholder='Enter password' className="flex-1 ml-2 " value={profile.password} onChangeText={(text) => setPassword(text)}/>
                 </View>
                 <View className="flex-row flex-2 item-center p-1 rounded-md bg-yellow-200">
                     <Icon.File height="30" width="22" stroke="darkorange" className="pl-1.5" />
-                    <TextInput placeholder='Enter pic' className="flex-1 ml-2 " value={image}/>
+                    <TextInput placeholder='Enter pic' className="flex-1 ml-2 " value={profile.photoURL} onChangeText={(text) => setPhotoURL(text)}/>
                 </View>
                 
                 <TouchableOpacity className="bg-orange-400 p-3 rounded-full"
-                    onPress={regisrter}
+                    onPress={onRegisterPress}
                  >
                     <Text className="text-white text-center font-bold text-lg">Register</Text>
                 </TouchableOpacity>

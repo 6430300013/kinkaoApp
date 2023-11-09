@@ -42,34 +42,31 @@ export const featured = {
             id: 1,
             name: 'KFC',
             image: require('../image/kfc.png'),
-            description: 'Hot and spicy pizzas',
+            description: 'Hot and spicy',
             // ละติจูด
             lng: -85.5324269,
             // ลองจิจูด 
             lat: 38.2145602,
-            address: '434 second street',
-            stars: 4,
-            reviews: '4.4k',
-            category: 'Fast Food',
+            address: '404 street',
             dishes: [
                 {
                    id: 1,
                    name: 'Chicken1',
-                   description: 'cheezy garlic pizza',
+                   description: 'Hot and spicy',
                    price: 10,
                    image:  require('../image/chicken1.png')
                 },
                 {
                    id: 2,
                    name: 'Chicken1',
-                   description: 'cheezy garlic pizza',
+                   description: 'Hot and spicy',
                    price: 10,
                    image:  require('../image/chicken1.png')
                 },
                 {
                    id: 3,
                    name: 'Chicken1',
-                   description: 'cheezy garlic pizza',
+                   description: 'Hot and spicy',
                    price: 10,
                    image:  require('../image/chicken1.png')
                 },
@@ -80,110 +77,35 @@ export const featured = {
             id: 2,
             name: 'Mew WinkSab',
             image: require('../image/chicken1.png'),
-            description: 'Hot and spicy pizzas',
+            description: 'Hot and spicy',
             lng: -85.5324269,
             lat: 38.2145602,
-            address: '434 second street',
-            stars: 4,
-            reviews: '4.4k',
-            category: 'Fast Food',
+            address: '404 street',
             dishes: [
                 {
                    id: 1,
-                   name: 'pizza',
-                   description: 'cheezy garlic pizza',
+                   name: 'ChickChick',
+                   description: 'cheezy',
                    price: 10,
-                   image:  require('../image/chicken1.png')
+                   image:  require('../image/chickenB.png')
                 },
                 {
                    id: 2,
-                   name: 'pizza',
-                   description: 'cheezy garlic pizza',
+                   name: 'ChickChick',
+                   description: 'cheezy',
                    price: 10,
                    image:  require('../image/chickenB.png')
                 },
                 {
                    id: 3,
-                   name: 'pizza',
-                   description: 'cheezy garlic pizza',
+                   name: 'ChickChick',
+                   description: 'cheezy',
                    price: 10,
                    image:  require('../image/chickenB.png')
                 },
             ]
     
         },
-        {
-            id: 3,
-            name: 'Malee Dong',
-            image: require('../image/malee.jpg'),
-            description: 'Hot and spicy pizzas',
-            lng: -85.5324269,
-            lat: 38.2145602,
-            address: '434 second street',
-            stars: 4,
-            reviews: '4.4k',
-            category: 'Fast Food',
-            dishes: [
-                {
-                   id: 1,
-                   name: 'pizza',
-                   description: 'cheezy garlic pizza',
-                   price: 10,
-                   image:  require('../image/chicken1.png')
-                },
-                {
-                   id: 2,
-                   name: 'pizza',
-                   description: 'cheezy garlic pizza',
-                   price: 10,
-                   image:  require('../image/chickenB.png')
-                },
-                {
-                   id: 3,
-                   name: 'pizza',
-                   description: 'cheezy garlic pizza',
-                   price: 10,
-                   image:  require('../image/chickenB.png')
-                },
-            ]
-    
-        },
-        {
-            id: 4,
-            name: 'Erk',
-            image: require('../image/chicken1.png'),
-            description: 'Hot and spicy pizzas',
-            lng: -85.5324269,
-            lat: 38.2145602,
-            address: '434 second street',
-            stars: 4,
-            reviews: '4.4k',
-            category: 'Fast Food',
-            dishes: [
-                {
-                   id: 1,
-                   name: 'pizza',
-                   description: 'cheezy garlic pizza',
-                   price: 10,
-                   image:  require('../image/chicken1.png')
-                },
-                {
-                   id: 2,
-                   name: 'pizza',
-                   description: 'cheezy garlic pizza',
-                   price: 10,
-                   image:  require('../image/chickenB.png')
-                },
-                {
-                   id: 3,
-                   name: 'pizza',
-                   description: 'cheezy garlic pizza',
-                   price: 10,
-                   image:  require('../image/chickenB.png')
-                },
-            ]
-    
-        }
     ],
     
 

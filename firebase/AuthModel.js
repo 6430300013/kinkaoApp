@@ -5,13 +5,13 @@ import {
   updateProfile,updatePassword,sendPasswordResetEmail
 } from 'firebase/auth'
 
-import {addUser} from 'firebase/UserModel'
+import {addUser} from './UserMoodel'
 //authen
 const auth = getAuth(app)
 
 export const signUpEmailPass = (profile,success,unsuccess) => {
-  console.log(`username: ${profile.username}`)
-  createUserWithEmailAndPassword(auth,profile.username,profile.password)
+  console.log(`username: ${profile.email}`)
+  createUserWithEmailAndPassword(auth,profile.email,profile.password)
   .then((userCredential)=>{
     const user = userCredential.user //userไม่ได้ตั้งเองเป็นของโปรแกรมเขา
     console.log(`userCredential: ${user}`)

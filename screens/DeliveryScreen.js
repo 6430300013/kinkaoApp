@@ -15,7 +15,10 @@ export default function DeliveryScreen() {
     const origin = {latitude: 13.71835, longitude: 100.62124};
     const destination = {latitude: 13.07913, longitude: 101.93422};
     const GOOGLE_MAPS_APIKEY = 'AIzaSyBQPDdg96BpVWwHmkiTIr3LpjLu4CshNgQ';
-
+    const cancel = ()=>{
+        dispatch(emptyBasket());
+        navigation.navigate('Home')
+      }
 
     return(
     <View className="flex-1">
@@ -48,30 +51,45 @@ export default function DeliveryScreen() {
             </Marker>
         </MapView><ScrollView>
         
-          <View
-            style={{borderTopLeftRadius: 40, borderTopRightRadius: 40}}
-            className="bg-white -mt-12 pt-6 shadow"
-          >
-            {    restaurant.dishes.map((dish, index)=>{
-                return(
-                    <View key={index}
-                        className="flex-row items-center space-x-3 py-2 px-4 bg-white rounded-3xl mx-2 mb-3 shadow-md">
-                            <Text className="font-bold ">
-                                1 x
-                            </Text>
-                            <Image className="h-14 w-14 rounded-md" source={dish.image}/>
-                            <Text className="flex-1 font-bold text-gray-700">{dish.name}</Text>
-                            <Text className="font-semibold text-base">{dish.price} ฿</Text>
-                            <TouchableOpacity
-                                className="p-1 rounded-full bg-orange-400"
-                            >
-                                <Icon.Minus strokeWidth={2} height={20} width={20} stroke="white"/>
-                            </TouchableOpacity>
-                    </View>
-                    )
-                })
-            }
-          </View>
+          <View className="rounded-t-3xl  bg-white relative">
+            <View className="flex-row justify-between px-5 pt-10">
+                <View>
+                    <Text className="text-lg text-gray-700 font-semibold">
+                        Waiting...
+                    </Text>
+                    <Text className="text-3xl font-extrabold text-gray-700 ">
+                        15-30 Minutes
+                    </Text>
+                    <Text className="mt-2 font-semibold text-gray-700 py-3">
+                        Your order its way
+                    </Text>
+                    
+                </View>
+                <Image className="h-24 w-24 rounded-full py-3" source={require('../image/wait.gif')} />
+                
+            </View>
+            <View className="bg-yellow-400 flex-row justify-between items-center rounded-t-3xl  relative py-3">
+                <View className="p-1 rounded-full bg-orange-400 left-3">
+                <Image className="h-16 w-16 rounded-full " source={require('../image/Anno.jpg')} />
+                </View>
+                <View className="flex-1 ml-3">
+                    <Text className="text-lg font-bold left-3">
+                        Somchai B.
+                    </Text>
+                    <Text className="font-semibold left-3">
+                        Your Rider
+                    </Text>
+                </View>
+                <View className="flex-row items-center space-x-3 mr-3  rounded-full">
+                    <TouchableOpacity className="bg-white p-2 rounded-full">
+                        <Icon.MessageCircle stroke={'green'} strokeWidth={3}/>
+                    </TouchableOpacity>
+                    <TouchableOpacity className="bg-white p-2 rounded-full" onPress={cancel}>
+                        <Icon.XCircle stroke={'red'} strokeWidth={3}/>
+                    </TouchableOpacity>
+                </View>
+            </View>
+        </View>
         </ScrollView>
             
     </View>

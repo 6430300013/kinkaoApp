@@ -3,6 +3,7 @@ import React from 'react'
 import { useNavigation, useRoute } from '@react-navigation/native'
 import * as Icon from "react-native-feather";
 
+
 export default function CartIcon({item}) {
 const navigation = useNavigation();
 
